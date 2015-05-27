@@ -1,0 +1,20 @@
+
+public class Dice implements Runnable
+{
+	private int randomDiceNum;
+	
+	public int Throw ()
+	{
+		 randomDiceNum = ((1 + (int)( Math.random()* 6)));
+		 return randomDiceNum;
+	}
+
+	@Override
+	public void run() 
+	{	
+			Throw();
+			System.out.println(Thread.currentThread().getName() + " Dice Value: "  + randomDiceNum);
+	}
+	
+	
+}
