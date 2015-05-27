@@ -2,6 +2,7 @@
 public class Dice implements Runnable
 {
 	private int randomDiceNum;
+	private String taskName;
 	
 	public int Throw ()
 	{
@@ -9,11 +10,16 @@ public class Dice implements Runnable
 		 return randomDiceNum;
 	}
 
-	@Override
+	public Dice (String name)
+	{
+		taskName = name;
+	}
+	
+	
 	public void run() 
 	{	
 			Throw();
-			System.out.println(Thread.currentThread().getName() + " Dice Value: "  + randomDiceNum);
+			System.out.println("This is: " + taskName + " Dice Value: "  + randomDiceNum);
 	}
 	
 	
